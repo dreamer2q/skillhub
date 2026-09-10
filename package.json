@@ -1,0 +1,18 @@
+{
+  "name": "@dreamer2q/skillhub",
+  "version": "0.1.0",
+  "description": "Portable skill catalog and lifecycle CLI for Codex, Claude Code and other agents",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "bin": { "skillhub": "bin/skillhub.mjs" },
+  "files": ["bin/", "lib/", "skills/", "catalog.json", "docs/", "AGENTS.md", "CHANGELOG.md", "NOTICE.md"],
+  "scripts": {
+    "test": "node --test",
+    "validate": "node bin/skillhub.mjs validate",
+    "check": "npm run validate && npm test",
+    "prepack": "npm run validate"
+  },
+  "repository": { "type": "git", "url": "git+https://github.com/dreamer2q/skillhub.git" },
+  "publishConfig": { "registry": "https://npm.pkg.github.com" }
+}

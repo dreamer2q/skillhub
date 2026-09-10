@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "name": "dreamer2q/skillhub",
+  "skills": {
+    "browser-cdp": {
+      "version": "1.0.0",
+      "description": "Use an existing Chrome session through CDP: navigation, JavaScript, screenshots and network recording.",
+      "path": "skills/browser-cdp",
+      "tags": ["browser", "cdp", "automation"],
+      "dependencies": []
+    },
+    "skillhub-manager": {
+      "version": "1.0.0",
+      "description": "Install, inspect, update and author skills in a Skillhub catalog for Codex and Claude Code.",
+      "path": "skills/skillhub-manager",
+      "tags": ["skills", "management", "authoring"],
+      "dependencies": []
+    }
+  },
+  "collections": { "browser": ["browser-cdp"], "starter": ["browser-cdp", "skillhub-manager"] },
+  "targets": {
+    "codex": { "global": "~/.codex/skills", "project": ".agents/skills", "env": "CODEX_HOME", "envSuffix": "skills" },
+    "claude": { "global": "~/.claude/skills", "project": ".claude/skills", "env": "CLAUDE_CONFIG_DIR", "envSuffix": "skills" },
+    "agents": { "global": "~/.agents/skills", "project": ".agents/skills" }
+  }
+}
